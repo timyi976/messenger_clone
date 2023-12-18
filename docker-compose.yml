@@ -1,0 +1,20 @@
+version: "3.1"
+
+services:
+  postgresql:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: messenger
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /var/lib/postgresql/data
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # adminer is a simple frontend for you to interact with the database
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080

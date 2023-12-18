@@ -1,0 +1,37 @@
+{
+  "overrides": [
+    {
+      "files": ["*.mjs", "*.ts", "*.tsx"],
+      "parserOptions": {
+        "project": "tsconfig.json"
+      }
+    }
+  ],
+  "ignorePatterns": ["**/components/ui"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "warn",
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": "off",
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "@typescript-eslint/no-non-null-assertion": "off"
+  }
+}
